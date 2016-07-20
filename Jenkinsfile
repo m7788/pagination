@@ -1,5 +1,12 @@
 #!groovy
 
+// Mark the code checkout 'stage'....
+stage 'Checkout'
+node {
+	// Get some code from a GitHub repository
+	git url: 'https://github.com/m7788/pagination.git'
+}
+
 stage 'package'
 node {
     mvn 'clean package'
